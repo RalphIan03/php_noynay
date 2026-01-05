@@ -18,7 +18,7 @@
 
     <?php
     for ($x = 0; $x < 10; $x++) {
-        echo ("<h1> Hello world from php </h1>");
+        echo ("<h1> Hello world from php weeee </h1>");
     }
     ?>
 
