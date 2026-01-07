@@ -1,26 +1,77 @@
-*{
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1{
-    color: blueviolet;
+/* Center the login card */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
 }
 
-.logincard{
-    display: inline-block;
-    border: 1px solid black;
-    padding: 10px 10px;
+/* Login card */
+.logincard {
+    background: #ffffff;
+    width: 350px;
+    padding: 30px;
     border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
-label{
-    margin-top: 10px;
-    display: block;
+
+/* Title */
+.logincard h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
-button{
-    width: 100%;
-    background-color: greenyellow;
+
+/* Form layout */
+.logincard form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.logincard label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Inputs */
+.logincard input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Input focus effect */
+.logincard input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+/* Button */
+.logincard button {
+    padding: 12px;
     border: none;
-    padding: 5px;
-    margin-top: 10px;
-    display: block;
+    border-radius: 5px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+.logincard button:hover {
+    background-color: #4338ca;
 }
