@@ -28,21 +28,6 @@
     </div>
 
     <?php
-
-    // $name = "john";
-    // $nums = "1";
-    // $num = 1.1111;
-
-    // echo ("hello world" . $name);
-    // echo ($num + $nums);
-
-    // var_dump($nums);
-    // var_dump($num);
-
-    // $num = 0;
-    // var_dump($num);
-
-    // echo $name . $nums + $num;
     ?>
 
 </body>
