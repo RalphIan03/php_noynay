@@ -1,7 +1,7 @@
 /* Reset */
 * {
     margin: 0;
-    padding: 0;
+    padding: 20;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,6 +36,10 @@
     transition: color 0.3s ease;
 }
 
+.listing li{
+    list-style:circle;
+}
+
 .nav-links li a:hover {
     color: #60a5fa;
 }
@@ -53,4 +57,8 @@
 
 .login-btn:hover {
     background-color: #2563eb;
+}
+
+table, th, td{
+    border: #1f2933 solid 1px;
 }

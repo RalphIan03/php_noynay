@@ -5,6 +5,8 @@ if (isset($_GET['name'])) {
 }else{
     $name = "No Name";
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
