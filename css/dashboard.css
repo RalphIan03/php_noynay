@@ -62,3 +62,21 @@
 table, th, td{
     border: #1f2933 solid 1px;
 }
+
+.card{
+    display: inline-block;
+    width: 100%;
+    margin: 5% 5%;
+}
+
+.card form{
+    text-align: left;
+}
+.card form label{
+    display:block;
+}
+
+.card form button{
+    display: block;
+    margin-top: 10px;
+}

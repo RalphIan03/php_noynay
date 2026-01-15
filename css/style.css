@@ -75,3 +75,10 @@ body {
 .logincard button:hover {
     background-color: #4338ca;
 }
+
+.card{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: #2563eb;
+}
