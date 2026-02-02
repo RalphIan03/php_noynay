@@ -1,5 +1,7 @@
 <?php
-$list = ['John', 'Jane', 'June', 'Gian', 'Chaff', 'Mark', 'Latreel', 'Andre'];
+include "../config/includes.php";
+$list = retrieveAllUsers();
+// echo json_encode($list);
 ?>
 
 <!DOCTYPE html>
@@ -17,19 +19,12 @@ include "resources/header.php";
 
     <h1>This is Retrive page</h1>
 
-    <ul>
-        <?php
-        foreach ($list as $item) {
-        ?>
-            <li> <?= $item ?> </li>
-        <?php
-        }
-        ?>
-    </ul>
-
     <table>
         <tr>
             <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Username</th>
             <th>Action</th>
         </tr>
 
@@ -37,9 +32,12 @@ include "resources/header.php";
         foreach ($list as $item) {
         ?>
             <tr>
-                <td><?= $item ?></td>
-                <td><button>View</button></td>
-            </tr> 
+                <td><?= $item["name"] ?></td>
+                <td><?= $item["age"] ?></td>
+                <td><?= $item["address"] ?></td>
+                <td><?= $item["username"] ?></td>
+                <td><a href="viewPage.php?user_id=<?= $item['user_id'] ?>">View</a></td>
+            </tr>
         <?php
         }
         ?>
