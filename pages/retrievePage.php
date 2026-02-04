@@ -1,6 +1,7 @@
 <?php
 include "../config/includes.php";
 $list = retrieveAllUsers();
+$productList = retrieveAllProducts();
 // echo json_encode($list);
 ?>
 
@@ -43,7 +44,33 @@ include "resources/header.php";
         ?>
     </table>
 
+    <br>
 
+    <h1>Products</h1>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Quantity</th>
+            <th>Product Type</th>
+            <th>Product Price</th>
+            <th>Action</th>
+        </tr>
+
+        <?php
+        foreach ($productList as $item) {
+        ?>
+            <tr>
+                <td><?= $item["prod_name"] ?></td>
+                <td><?= $item["prod_quantity"] ?></td>
+                <td><?= $item["prod_type"] ?></td>
+                <td><?= $item["prod_price"] ?></td>
+                <td><a href="viewPage.php?user_id=<?= $item['prod_id'] ?>">View</a></td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
+    <br>
 </body>
 
 </html>
