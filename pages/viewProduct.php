@@ -23,8 +23,8 @@ include "resources/header.php";
     include "resources/navigation.php";
     ?>
 
-    <h1>Name: <?= $getUser[0]['name'] ?></h1>
-    <h4>Age: <?= $getUser[0]['age'] ?></h4>
+    <h1>Name: <?= $getUser[0]['prod_name'] ?></h1>
+    <h4>Age: <?= $getUser[0]['prod_quantity'] ?></h4>
     <h4>Address: <?= $getUser[0]['address'] ?></h4>
     <h4>Username: <?= $getUser[0]['username'] ?></h4>
     <a href="">Edit</a>

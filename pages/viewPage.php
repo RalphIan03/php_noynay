@@ -4,12 +4,9 @@ include "../config/includes.php";
 if (isset($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
     $getUser = getUser($user_id);
-
 } else {
     echo "<script> window.location.href='retrievePage.php' </script>";
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -23,14 +20,28 @@ include "resources/header.php";
     include "resources/navigation.php";
     ?>
 
-    <h1>Name: <?= $getUser[0]['name'] ?></h1>
-    <h4>Age: <?= $getUser[0]['age'] ?></h4>
-    <h4>Address: <?= $getUser[0]['address'] ?></h4>
-    <h4>Username: <?= $getUser[0]['username'] ?></h4>
+    <h1>View and Update Page</h1>
 
-    <a href="">Edit</a>
+    <form action="functions/updateUser.php" method="POST">
+        <label for="name">Name</label>
+        <input name="name" type="text" value="<?= $getUser[0]['name'] ?>">
 
+        <label for="age">Age</label>
+        <input name="age" type="number" value="<?= $getUser[0]['age'] ?>">
 
+        <label for="address">Address</label>
+        <input name="address" type="text" value="<?= $getUser[0]['address'] ?>">
+
+        <label for="user_name">Username</label>
+        <input name="user_name" type="text" value="<?= $getUser[0]['username'] ?>">
+
+        <label for="password">Password</label>
+        <input name="password" type="text" value="<?= $getUser[0]['password'] ?>">
+
+        <input type="text" name="user_id" value="<?= $getUser[0]['user_id'] ?>" hidden>
+
+        <button>Edit</button>
+    </form>
 
 </body>
 

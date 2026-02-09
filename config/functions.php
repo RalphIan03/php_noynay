@@ -52,6 +52,7 @@ function retrieveAllProducts()
     return $stmnt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+//para ni sa pagkuah ug product based sa id
 function getProduct($prod_id)
 {
     include "connection.php";
@@ -63,4 +64,31 @@ function getProduct($prod_id)
     ]);
 
     return $stmnt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+//this is for updating user
+function updateUser($userID, $name, $age, $address, $usernames, $passwords)
+{
+    include "connection.php";
+
+    $sql = "UPDATE user SET 
+                name= :name, 
+                age= :age, 
+                address= :address, 
+                username= :username, 
+                password= :password
+                WHERE
+                user_id= :user_id
+                ";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "name" => $name,
+        "age"=> $age,
+        "address" => $address,
+        "username" => $usernames,
+        "password" => $passwords,
+        "user_id" => $userID
+    ]);
+
+    return $stmnt;
 }
