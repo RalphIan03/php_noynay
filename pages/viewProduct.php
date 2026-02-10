@@ -4,7 +4,6 @@ include "../config/includes.php";
 if (isset($_GET['prod_id'])) {
     $prod_id = $_GET['prod_id'];
     $getUser = getProduct($prod_id);
-
 } else {
     echo "<script> window.location.href='retrievePage.php' </script>";
 }
@@ -23,11 +22,22 @@ include "resources/header.php";
     include "resources/navigation.php";
     ?>
 
-    <h1>Name: <?= $getUser[0]['prod_name'] ?></h1>
-    <h4>Age: <?= $getUser[0]['prod_quantity'] ?></h4>
-    <h4>Address: <?= $getUser[0]['address'] ?></h4>
-    <h4>Username: <?= $getUser[0]['username'] ?></h4>
-    <a href="">Edit</a>
+    <h1>Product Information</h1>
+    <br>
+
+    <form action="functions/updateProduct.php" method="POST">
+        <label for="">Product Name</label>
+        <input type="text" name="pname" value="<?= $getUser[0]['prod_name'] ?>">
+        <label for="">Product Quantity</label>
+        <input type="number" name="pquant" value="<?= $getUser[0]['prod_quantity'] ?>">
+        <label for="">Product Type</label>
+        <input type="text" name="ptype" value="<?= $getUser[0]['prod_type'] ?>">
+        <label for="">Product Price</label>
+        <input type="text" name="pprice" value="<?= $getUser[0]['prod_price'] ?>">
+
+        <input type="text" name="prod_id" value="<?= $getUser[0]['prod_id'] ?>" hidden>
+        <button>Edit</button>
+    </form>
 </body>
 
 </html>

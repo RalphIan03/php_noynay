@@ -6,7 +6,7 @@ if (isset($_GET['user_id'])) {
     $getUser = getUser($user_id);
 } else {
     echo "<script> window.location.href='retrievePage.php' </script>";
-}
+}  
 ?>
 
 <!DOCTYPE html>

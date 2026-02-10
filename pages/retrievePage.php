@@ -37,7 +37,10 @@ include "resources/header.php";
                 <td><?= $item["age"] ?></td>
                 <td><?= $item["address"] ?></td>
                 <td><?= $item["username"] ?></td>
-                <td><a href="viewPage.php?user_id=<?= $item['user_id'] ?>">View</a></td>
+                <td><a href="viewPage.php?user_id=<?= $item['user_id'] ?>">View</a>
+                    <a href="">Delete</a>
+                </td>
+
             </tr>
         <?php
         }
@@ -64,7 +67,9 @@ include "resources/header.php";
                 <td><?= $item["prod_quantity"] ?></td>
                 <td><?= $item["prod_type"] ?></td>
                 <td><?= $item["prod_price"] ?></td>
-                <td><a href="viewPage.php?user_id=<?= $item['prod_id'] ?>">View</a></td>
+                <td><a href="viewProduct.php?prod_id=<?= $item['prod_id'] ?>">View</a>
+                    <a href="">Delete</a>
+                </td>
             </tr>
         <?php
         }

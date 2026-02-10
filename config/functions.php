@@ -92,3 +92,27 @@ function updateUser($userID, $name, $age, $address, $usernames, $passwords)
 
     return $stmnt;
 }
+
+function updateProduct($pname, $pquant, $ptype, $pprice, $pid)
+{
+    include "connection.php";
+
+    $sql = "UPDATE products SET 
+                prod_name= :pname, 
+                prod_quantity= :pquant, 
+                prod_type= :ptype, 
+                prod_price= :pprice
+                WHERE
+                prod_id= :pid
+                ";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "pname" => $pname,
+        "pquant"=> $pquant,
+        "ptype" => $ptype,
+        "pprice" => $pprice,
+        "pid" => $pid,
+    ]);
+
+    return $stmnt;
+}
