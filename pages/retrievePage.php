@@ -3,6 +3,7 @@ include "../config/includes.php";
 $list = retrieveAllUsers();
 $productList = retrieveAllProducts();
 // echo json_encode($list);
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ include "resources/header.php";
                 <td><?= $item["address"] ?></td>
                 <td><?= $item["username"] ?></td>
                 <td><a href="viewPage.php?user_id=<?= $item['user_id'] ?>">View</a>
-                    <a href="">Delete</a>
+                    <a href="functions/deleteFunction.php?deleteFrom=user&id=<?= $item['user_id'] ?>">Delete</a>
                 </td>
 
             </tr>
@@ -68,7 +69,7 @@ include "resources/header.php";
                 <td><?= $item["prod_type"] ?></td>
                 <td><?= $item["prod_price"] ?></td>
                 <td><a href="viewProduct.php?prod_id=<?= $item['prod_id'] ?>">View</a>
-                    <a href="">Delete</a>
+                    <a href="functions/deleteFunction.php?deleteFrom=product&id=<?= $item['prod_id'] ?>">Delete</a>
                 </td>
             </tr>
         <?php
@@ -77,5 +78,15 @@ include "resources/header.php";
     </table>
     <br>
 </body>
+
+<?php
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'ok') {
+        echo "<script> alert('Value Deleted Successfully') </script>";
+    } else if ($_GET['status'] == 'no') {
+        echo "<script> alert('Value Deleted Unsuccessfully') </script>";
+    }
+}
+?>
 
 </html>

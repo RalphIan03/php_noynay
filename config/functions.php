@@ -83,7 +83,7 @@ function updateUser($userID, $name, $age, $address, $usernames, $passwords)
     $stmnt = $conn->prepare($sql);
     $stmnt->execute([
         "name" => $name,
-        "age"=> $age,
+        "age" => $age,
         "address" => $address,
         "username" => $usernames,
         "password" => $passwords,
@@ -108,10 +108,36 @@ function updateProduct($pname, $pquant, $ptype, $pprice, $pid)
     $stmnt = $conn->prepare($sql);
     $stmnt->execute([
         "pname" => $pname,
-        "pquant"=> $pquant,
+        "pquant" => $pquant,
         "ptype" => $ptype,
         "pprice" => $pprice,
         "pid" => $pid,
+    ]);
+
+    return $stmnt;
+}
+
+function deleteUser($id)
+{
+    include "connection.php";
+
+    $sql = "DELETE FROM user WHERE user_id = :id";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "id" => $id
+    ]);
+
+    return $stmnt;
+}
+
+function deleteProduct($id)
+{
+    include "connection.php";
+
+    $sql = "DELETE FROM products WHERE prod_id = :id";
+    $stmnt = $conn->prepare($sql);
+    $stmnt->execute([
+        "id" => $id
     ]);
 
     return $stmnt;
