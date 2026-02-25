@@ -19,6 +19,10 @@ include "resources/header.php";
             <input type="number" name="user_age">
             <label for="">Address</label>
             <input type="text" name="user_address">
+            <label for="">Username</label>
+            <input type="text" name="user_uname">
+            <label for="">Password</label>
+            <input type="text" name="user_password">
 
             <button>Submit</button>
         </form>

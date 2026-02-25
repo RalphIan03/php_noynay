@@ -1,11 +1,13 @@
 <?php
 $username = 'root';
 $password = '';
-$servername = 'localhost';
+$servername = 'db'; 
+$port = 3306;
 $dbname = 'cp4s_noynay_db';
 
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $dsn = "mysql:host=$servername;port=$port;dbname=$dbname;charset=utf8mb4";
+    $conn = new PDO($dsn, $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // echo "Connected successfully";
 } catch (PDOException $e) {
